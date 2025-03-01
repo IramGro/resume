@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Currículum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+   <!-- Botón de cambio de idioma -->
+   <button id="language-toggle" class="btn-toggle">
+    <span id="language-text">Español</span>
+  </button>
+
+  <header>
+      <h1 id="header-name">Tu Nombre</h1>
+      <p id="header-title">QA Engineer | Automation | DevOps</p>
+  </header>
+
+  <section id="about">
+      <h2 id="about-title">Sobre mí</h2>
+      <p id="about-description">Ingeniero de pruebas con experiencia en automatización, análisis de bugs y gestión de equipos.</p>
+  </section>
+
+  <section id="experience">
+      <h2 id="experience-title">Experiencia Profesional</h2>
+      <div class="job">
+          <h3>Grupo TI México</h3>
+          <p><strong>QA Lead | 2023 - Actualidad</strong></p>
+          <ul>
+              <li>Gestión de pruebas de regresión y recursos.</li>
+              <li>Automatización de pruebas con Selenium y Appium.</li>
+              <li>Validación de cambios en código y análisis de bugs.</li>
+          </ul>
+      </div>
+      <div class="job">
+          <h3>Getic</h3>
+          <p><strong>QA Engineer | 2019 - 2023</strong></p>
+          <ul>
+              <li>Ejecución de pruebas manuales y automatizadas.</li>
+              <li>Documentación y análisis de defectos.</li>
+              <li>Colaboración en validación de código y mejoras en procesos.</li>
+          </ul>
+      </div>
+  </section>
+
+  <section id="skills">
+      <h2 id="skills-title">Habilidades Técnicas</h2>
+      <div class="skills-container">
+          <span>Python</span> 
+          <span>Selenium</span> 
+          <span>Appium</span> 
+          <span>Oracle</span> 
+          <span>SQL</span> 
+          <span>Postman API</span> 
+          <span>Azure</span> 
+          <span>Scrum</span> 
+      </div>
+  </section>
+
+  <section id="contact">
+      <h2 id="contact-title">Contacto</h2>
+      <p id="contact-email">Email: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+      <p id="contact-linkedin">LinkedIn: <a href="#">linkedin.com/in/tuusuario</a></p>
+      <p id="contact-github">GitHub: <a href="#">github.com/tuusuario</a></p>
+      <button class="download-btn">Descargar CV español</button>
+      <button class="download-btn">Descargar CV ingles</button>
+  </section>
+  <script src="script.js"></script>
+  <button id="dark-mode-toggle">Modo Oscuro 🌙</button>
+  <div id="particle-background"></div>
+  <script>
+    const translations = {
+      es: {
+        "header-name": "Tu Nombre",
+        "header-title": "QA Engineer | Automation | DevOps",
+        "about-title": "Sobre mí",
+        "about-description": "Ingeniero de pruebas con experiencia en automatización, análisis de bugs y gestión de equipos.",
+        "experience-title": "Experiencia Profesional",
+        "skills-title": "Habilidades Técnicas",
+        "contact-title": "Contacto",
+        "contact-email": "Email: tuemail@example.com",
+        "contact-linkedin": "LinkedIn: linkedin.com/in/tuusuario",
+        "contact-github": "GitHub: github.com/tuusuario",
+        "language-text": "Español"
+      },
+      en: {
+        "header-name": "Your Name",
+        "header-title": "QA Engineer | Automation | DevOps",
+        "about-title": "About Me",
+        "about-description": "Test engineer with experience in automation, bug analysis, and team management.",
+        "experience-title": "Professional Experience",
+        "skills-title": "Technical Skills",
+        "contact-title": "Contact",
+        "contact-email": "Email: yourmail@example.com",
+        "contact-linkedin": "LinkedIn: linkedin.com/in/youruser",
+        "contact-github": "GitHub: github.com/youruser",
+        "language-text": "English"
+      }
+    };
+
+    // Función para cambiar el idioma
+    const toggleLanguage = () => {
+      const currentLang = document.documentElement.lang === "es" ? "en" : "es"; // Cambiar entre español e inglés
+      const languageText = document.getElementById("language-text");
+
+      // Actualizar el idioma de la página
+      for (const key in translations[currentLang]) {
+        document.getElementById(key).textContent = translations[currentLang][key];
+      }
+
+      // Cambiar el idioma del atributo lang
+      document.documentElement.lang = currentLang;
+
+      // Cambiar texto del botón
+      languageText.textContent = currentLang === "es" ? "Español" : "English";
+    };
+
+    // Asignar la acción de cambiar idioma al botón
+    document.getElementById("language-toggle").addEventListener("click", toggleLanguage);
+  </script>
+
+</body>
+</html>
